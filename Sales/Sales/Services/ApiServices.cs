@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Sales.Common.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
+using Plugin.Connectivity;
+using Sales.Helpers;
+using Xamarin.Forms;
 
 namespace Sales.Services
 {
@@ -50,6 +53,35 @@ namespace Sales.Services
                     Message = ex.Message.ToString(),
                 };
             }
+        }
+
+        public async Task<Response> CheckConnection()
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = Languages.TurnOnInternet,
+                };
+            }
+
+            //var urlTest = Application.Current.Resources["UrlTest"].ToString();
+            var urlTest = "google.com";
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable(urlTest);
+            if (!isReachable)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = Languages.NoInternet,
+                };
+            }
+
+            return new Response
+            {
+                IsSuccess = true,
+            };
         }
     }
 }

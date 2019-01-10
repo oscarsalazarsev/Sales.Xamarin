@@ -8,6 +8,13 @@
             <!--Locator-->
             <infra:InstanceLocator x:Key="Locator"/>
 
+            <!--Parameters-->
+            <x:String x:Key="UrlTest">google.com</x:String>
+
+            <x:String x:Key="UrlAPI">https://salesapisevices.azurewebsites.net</x:String>
+            <x:String x:Key="UrlPrefix">/api</x:String>
+            <x:String x:Key="UrlProductsController">/Products</x:String>
+
         </ResourceDictionary> 
     </Application.Resources>
 </Application>
