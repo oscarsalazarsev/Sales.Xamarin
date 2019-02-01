@@ -1,9 +1,12 @@
-﻿using System.Data.Entity;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web.Mvc;
+﻿using Sales.BackEnd.Helpers;
 using Sales.BackEnd.Models;
 using Sales.Common.Models;
+using System;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Sales.BackEnd.Controllers
 {
@@ -14,7 +17,7 @@ namespace Sales.BackEnd.Controllers
         // GET: Products
         public async Task<ActionResult> Index()
         {
-            return View(await db.Products.ToListAsync());
+            return View(await this.db.Products.OrderBy(p => p.Description).ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -24,7 +27,7 @@ namespace Sales.BackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = await db.Products.FindAsync(id);
+            Product product = await this.db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -43,16 +46,40 @@ namespace Sales.BackEnd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ProductId,Description,Price,IsAvailable,PublshOn")] Product product)
+        public async Task<ActionResult> Create(ProductView productView)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                await db.SaveChangesAsync();
+                var pic = string.Empty;
+                var folder = "~/Content/Images/Products";
+
+                if (productView.ImageFile != null)
+                {
+                    pic = FilesHelper.UploadPhoto(productView.ImageFile, folder);
+                    pic = $"{folder}/{pic}";
+                }
+
+                Product product = this.ToProduct(productView, pic);
+                this.db.Products.Add(product);
+                await this.db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(product);
+            return View(productView);
+        }
+
+        private Product ToProduct(ProductView productView, string pic)
+        {
+            return new Product
+            {
+                ImagePath       = pic,
+                Description     = productView.Description,
+                IsAvailable     = productView.IsAvailable,
+                Price           = productView.Price,
+                ProductId       = productView.ProductId,
+                PublshOn        = productView.PublshOn,
+                Remarks         = productView.Remarks,
+            };
         }
 
         // GET: Products/Edit/5
@@ -62,12 +89,28 @@ namespace Sales.BackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = await db.Products.FindAsync(id);
+            Product product = await this.db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+
+            ProductView productView = this.ToView(product);
+            return View(productView);
+        }
+
+        private ProductView ToView(Product product)
+        {
+            return new ProductView
+            {
+                ImagePath   = product.ImagePath,
+                Description = product.Description,
+                IsAvailable = product.IsAvailable,
+                Price       = product.Price,
+                ProductId   = product.ProductId,
+                PublshOn    = product.PublshOn,
+                Remarks     = product.Remarks,
+            };
         }
 
         // POST: Products/Edit/5
@@ -75,15 +118,25 @@ namespace Sales.BackEnd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ProductId,Description,Price,IsAvailable,PublshOn")] Product product)
+        public async Task<ActionResult> Edit(ProductView productView)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                var pic = productView.ImagePath;
+                var folder = "~/Content/Images/Products";
+
+                if (productView.ImageFile != null)
+                {
+                    pic = FilesHelper.UploadPhoto(productView.ImageFile, folder);
+                    pic = $"{folder}/{pic}";
+                }
+
+                Product product = this.ToProduct(productView, pic);
+                this.db.Entry(product).State = EntityState.Modified;
+                await this.db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(product);
+            return View(productView);
         }
 
         // GET: Products/Delete/5
@@ -93,7 +146,7 @@ namespace Sales.BackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = await db.Products.FindAsync(id);
+            Product product = await this.db.Products.FindAsync(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -106,9 +159,9 @@ namespace Sales.BackEnd.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Product product = await db.Products.FindAsync(id);
-            db.Products.Remove(product);
-            await db.SaveChangesAsync();
+            Product product = await this.db.Products.FindAsync(id);
+            this.db.Products.Remove(product);
+            await this.db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
@@ -116,7 +169,7 @@ namespace Sales.BackEnd.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                this.db.Dispose();
             }
             base.Dispose(disposing);
         }

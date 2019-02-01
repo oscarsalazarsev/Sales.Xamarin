@@ -11,15 +11,20 @@ namespace Sales.ViewModels
 {
     public class ProductsViewModel : BaseViewModel
     {
+        #region Attributes
+
         private ApiServices apiService;
         
-        private ObservableCollection<Product> products;
-
         private bool isRefreshing;
+
+        #endregion
+
+        #region Properties
+        private ObservableCollection<Product> products;
 
         public ObservableCollection<Product> Products
         {
-            get { return this.products;}
+            get { return this.products; }
             set { this.SetValue(ref this.products, value); }
         }
 
@@ -28,17 +33,33 @@ namespace Sales.ViewModels
             get { return this.isRefreshing; }
             set { this.SetValue(ref this.isRefreshing, value); }
         }
+        #endregion
 
-        public ICommand RefreshCommand
-        {
-            get { return new RelayCommand(LoadProducts); }
-        }
-
+        #region Constructors
         public ProductsViewModel()
         {
+            intance = this;
             this.apiService = new ApiServices();
             this.LoadProducts();
         }
+        #endregion
+
+        #region Singleton
+
+        private static ProductsViewModel intance;
+
+        public static ProductsViewModel GetIntance()
+        {
+            if (intance == null)
+            {
+                return new ProductsViewModel();
+            }
+
+            return intance;
+        }
+        #endregion
+
+        #region Methods
 
         private async void LoadProducts()
         {
@@ -61,10 +82,24 @@ namespace Sales.ViewModels
                 return;
             }
 
-            var list = (List<Product>) response.Result;
+            var list = (List<Product>)response.Result;
             this.Products = new ObservableCollection<Product>(list);
             this.IsRefreshing = false;
         }
+        #endregion
+
+        #region Commands
+        public ICommand RefreshCommand
+        {
+            get { return new RelayCommand(LoadProducts); }
+        }
+        #endregion
+
+
+
+
+
+
     }
 }
 

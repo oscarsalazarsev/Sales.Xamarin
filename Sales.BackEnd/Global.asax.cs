@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Sales.BackEnd.Models;
 
 namespace Sales.BackEnd
 {
@@ -12,6 +14,7 @@ namespace Sales.BackEnd
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LocalDataContext, Migrations.Configuration>()); /*Para que cuando arranque el Proyecto Valide la Migración y si hay cambio que Migre la Base de Datos*/
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

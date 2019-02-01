@@ -132,4 +132,46 @@
   <data name="titleProducts" xml:space="preserve">
     <value>produktet</value>
   </data>
+  <data name="titleAddProduct" xml:space="preserve">
+    <value>PRODUKT</value>
+  </data>
+  <data name="labelDescription" xml:space="preserve">
+    <value>Përshkrimi</value>
+  </data>
+  <data name="placeholderDescription" xml:space="preserve">
+    <value>Shkruani përshkrimin e produktit ...</value>
+  </data>
+  <data name="labelPrice" xml:space="preserve">
+    <value>Çmimi</value>
+  </data>
+  <data name="placeholderPrice" xml:space="preserve">
+    <value>Shkruani çmimin e produktit ...</value>
+  </data>
+  <data name="labelRemarks" xml:space="preserve">
+    <value>Vërejtje</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Ruaj</value>
+  </data>
+  <data name="labelChangeImage" xml:space="preserve">
+    <value>Prekni imazhin për ta ndryshuar</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>Duhet të futni një përshkrim!</value>
+  </data>
+  <data name="errorPrice" xml:space="preserve">
+    <value>Duhet të futni një çmim më të madh se zero</value>
+  </data>
+  <data name="msgImageSource" xml:space="preserve">
+    <value>Ku po shkoni ta merrni foton ?!</value>
+  </data>
+  <data name="msgFromGallery" xml:space="preserve">
+    <value>Galeri</value>
+  </data>
+  <data name="msgNewPicture" xml:space="preserve">
+    <value>Merrni një pamje të re!</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anulo</value>
+  </data>
 </root>

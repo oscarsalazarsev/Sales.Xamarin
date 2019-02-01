@@ -70,6 +70,24 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string btnSave {
+            get {
+                return ResourceManager.GetString("btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
@@ -79,11 +97,119 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter a description.
+        /// </summary>
+        public static string errorDescription {
+            get {
+                return ResourceManager.GetString("errorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a price greater than zero.
+        /// </summary>
+        public static string errorPrice {
+            get {
+                return ResourceManager.GetString("errorPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Touch the image to change it.
+        /// </summary>
+        public static string labelChangeImage {
+            get {
+                return ResourceManager.GetString("labelChangeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string labelDescription {
+            get {
+                return ResourceManager.GetString("labelDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string labelPrice {
+            get {
+                return ResourceManager.GetString("labelPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remarks.
+        /// </summary>
+        public static string labelRemarks {
+            get {
+                return ResourceManager.GetString("labelRemarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From gallery.
+        /// </summary>
+        public static string msgFromGallery {
+            get {
+                return ResourceManager.GetString("msgFromGallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where are you going to take the picture?.
+        /// </summary>
+        public static string msgImageSource {
+            get {
+                return ResourceManager.GetString("msgImageSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a new picture.
+        /// </summary>
+        public static string msgNewPicture {
+            get {
+                return ResourceManager.GetString("msgNewPicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Internet Connection..
         /// </summary>
         public static string NoInternet {
             get {
                 return ResourceManager.GetString("NoInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the product description....
+        /// </summary>
+        public static string placeholderDescription {
+            get {
+                return ResourceManager.GetString("placeholderDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the product price....
+        /// </summary>
+        public static string placeholderPrice {
+            get {
+                return ResourceManager.GetString("placeholderPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Product.
+        /// </summary>
+        public static string titleAddProduct {
+            get {
+                return ResourceManager.GetString("titleAddProduct", resourceCulture);
             }
         }
         

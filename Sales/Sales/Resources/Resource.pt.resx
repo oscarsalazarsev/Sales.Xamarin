@@ -132,4 +132,46 @@
   <data name="titleProducts" xml:space="preserve">
     <value>Produtos</value>
   </data>
+  <data name="titleAddProduct" xml:space="preserve">
+    <value>Adicionar produto</value>
+  </data>
+  <data name="labelDescription" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="placeholderDescription" xml:space="preserve">
+    <value>Digite a descrição do produto ...</value>
+  </data>
+  <data name="labelPrice" xml:space="preserve">
+    <value>Preço!</value>
+  </data>
+  <data name="placeholderPrice" xml:space="preserve">
+    <value>Insira Preço de Produto</value>
+  </data>
+  <data name="labelRemarks" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Salve</value>
+  </data>
+  <data name="labelChangeImage" xml:space="preserve">
+    <value>Toque na imagem para alterá-la</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>Você deve digitar uma descrição!</value>
+  </data>
+  <data name="errorPrice" xml:space="preserve">
+    <value>Você deve inserir um preço maior que zero</value>
+  </data>
+  <data name="msgImageSource" xml:space="preserve">
+    <value>Onde vais tirar a foto?</value>
+  </data>
+  <data name="msgFromGallery" xml:space="preserve">
+    <value>Da Galeria</value>
+  </data>
+  <data name="msgNewPicture" xml:space="preserve">
+    <value>Tirar uma foto nova</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>

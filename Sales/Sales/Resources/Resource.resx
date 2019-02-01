@@ -132,4 +132,46 @@
   <data name="titleProducts" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="titleAddProduct" xml:space="preserve">
+    <value>Add Product</value>
+  </data>
+  <data name="labelDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="placeholderDescription" xml:space="preserve">
+    <value>Enter the product description...</value>
+  </data>
+  <data name="labelPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="placeholderPrice" xml:space="preserve">
+    <value>Enter the product price...</value>
+  </data>
+  <data name="labelRemarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="labelChangeImage" xml:space="preserve">
+    <value>Touch the image to change it</value>
+  </data>
+  <data name="errorDescription" xml:space="preserve">
+    <value>You must enter a description</value>
+  </data>
+  <data name="errorPrice" xml:space="preserve">
+    <value>You must enter a price greater than zero</value>
+  </data>
+  <data name="msgImageSource" xml:space="preserve">
+    <value>Where are you going to take the picture?</value>
+  </data>
+  <data name="msgFromGallery" xml:space="preserve">
+    <value>From gallery</value>
+  </data>
+  <data name="msgNewPicture" xml:space="preserve">
+    <value>Take a new picture</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

@@ -4,7 +4,13 @@
              xmlns:i18n="clr-namespace:Sales.Helpers"
              x:Class="Sales.Views.ProductsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="{i18n:Translate titleProducts}}">
+             Title="{i18n:Translate titleProducts}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="ic_action_add_circle"
+            Command="{Binding AddProductCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Products}"
@@ -20,20 +26,31 @@
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label
+                                <Image
                                     Grid.Column="0"
-                                    BackgroundColor="LightBlue"
+                                    Source="{Binding ImageFullPath}"
+                                    WidthRequest="100">
+                                </Image>
+                                <StackLayout
+                                    Grid.Column="1"
+                                    VerticalOptions="Center">
+                                    <Label
                                     FontAttributes="Bold"
                                     Text="{Binding Description}">
-                                </Label>
+                                    </Label>
+                                    <Label
+                                        Text="{Binding Remarks}">
+                                    </Label>
+                                </StackLayout>
                                 <Label
-                                    Grid.Column="1"
-                                    BackgroundColor="MistyRose"
+                                    Grid.Column="2"
                                     HorizontalOptions="End"
-                                    Text="{Binding Price, StringFormat='{0:C2}'}">
+                                    Text="{Binding Price, StringFormat='{0:C2}'}"
+                                    VerticalOptions="Center">
                                 </Label>
                             </Grid>
                         </ViewCell>
