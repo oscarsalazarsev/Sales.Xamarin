@@ -174,4 +174,28 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="msgDeleteConfirmation" xml:space="preserve">
+    <value>Está seguro de eliminar esto?</value>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="msgConfirm" xml:space="preserve">
+    <value>¡Confirmar!</value>
+  </data>
+  <data name="titleEditProduct" xml:space="preserve">
+    <value>Editar Producto</value>
+  </data>
+  <data name="labelIsAvailable" xml:space="preserve">
+    <value>Está disponible?</value>
+  </data>
 </root>

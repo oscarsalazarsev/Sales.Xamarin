@@ -107,6 +107,44 @@ namespace Sales.Helpers
             get { return Resource.Cancel; }
         }
 
+        public static string btnEdit
+        {
+            get { return Resource.btnEdit; }
+        }
+
+        public static string btnDelete
+        {
+            get { return Resource.btnDelete; }
+        }
+
+        public static string msgDeleteConfirmation
+        {
+            get { return Resource.msgDeleteConfirmation; }
+        }
+
+        public static string btnYes
+        {
+            get { return Resource.btnYes; }
+        }
+
+        public static string btnNo
+        {
+            get { return Resource.btnNo; }
+        }
+
+        public static string msgConfirm
+        {
+            get { return Resource.msgConfirm; }
+        }
+        public static string titleEditProduct
+        {
+            get { return Resource.titleEditProduct; }
+        }
+
+        public static string labelIsAvailable
+        {
+            get { return Resource.labelIsAvailable; }
+        }
     }
 
 }

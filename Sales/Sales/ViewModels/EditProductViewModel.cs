@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Plugin.Permissions;
@@ -9,15 +6,20 @@ using Plugin.Permissions.Abstractions;
 using Sales.Common.Models;
 using Sales.Helpers;
 using Sales.Services;
+using System;
+using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Sales.ViewModels
 {
-    public class AddProductViewModel : BaseViewModel
+    public class EditProductViewModel : BaseViewModel
     {
         #region Attributes
 
         private ApiServices apiService;
+
+        private Product product;
 
         private bool isRunning;
 
@@ -31,11 +33,11 @@ namespace Sales.ViewModels
 
         #region Properties
 
-        public string Description { get; set; }
-
-        public string Price { get; set; }
-
-        public string Remarks { get; set; }
+        public Product Product
+        {
+            get { return this.product; }
+            set { this.SetValue(ref this.product, value); }
+        }
 
         public bool IsRunning
         {
@@ -59,12 +61,12 @@ namespace Sales.ViewModels
 
         #region Constructors
 
-        public AddProductViewModel()
+        public EditProductViewModel(Product product)
         {
-
+            this.product = product;
             this.apiService = new ApiServices();
             this.IsEnabled = true;
-            this.ImageSource = "noproduct";
+            this.ImageSource = product.ImageFullPath;
         }
 
         #endregion
@@ -82,7 +84,7 @@ namespace Sales.ViewModels
 
         private async void Save()
         {
-            if (String.IsNullOrEmpty(this.Description))
+            if (String.IsNullOrEmpty(this.Product.Description))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
@@ -91,18 +93,7 @@ namespace Sales.ViewModels
                 return;
             }
 
-            if (String.IsNullOrEmpty(this.Price))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
-                    Languages.errorPrice,
-                    Languages.Accept);
-                return;
-            }
-
-            var price = decimal.Parse(this.Price);
-            //decimal.TryParse(this.Price, price);
-            if (price < 0)
+            if (this.Product.Price < 0)
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
@@ -119,7 +110,9 @@ namespace Sales.ViewModels
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert(Languages.Error, checkConnection.Message,
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    checkConnection.Message,
                     Languages.Accept);
                 return;
             }
@@ -128,20 +121,13 @@ namespace Sales.ViewModels
             if (this.file != null)
             {
                 imageArray = FilesManager.ReadFully(this.file.GetStream());
+                this.Product.ImageArray = imageArray;
             }
-
-            var product = new Product
-            {
-                Description = this.Description,
-                Price = price,
-                Remarks = this.Remarks,
-                ImageArray = imageArray,
-            };
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
-            var response = await this.apiService.Post(url, prefix, controller, product);
+            var response = await this.apiService.Put(url, prefix, controller, this.Product, this.Product.ProductId);
             if (!response.IsSuccess)
             {
                 this.IsRunning = false;
@@ -155,6 +141,11 @@ namespace Sales.ViewModels
 
             var newProduct = (Product)response.Result;
             var productsViewModel = ProductsViewModel.GetIntance();
+            var oldProduct = productsViewModel.MyProducts.Where(p => p.ProductId == this.Product.ProductId).FirstOrDefault();
+            if (oldProduct != null)
+            {
+                productsViewModel.MyProducts.Remove(oldProduct);
+            }
             productsViewModel.MyProducts.Add(newProduct);
             productsViewModel.RefreshList();
 
@@ -188,7 +179,6 @@ namespace Sales.ViewModels
 
             if (source == Languages.msgNewPicture)
             {
-                //TakePhoto();
                 this.file = await CrossMedia.Current.TakePhotoAsync(
                     new StoreCameraMediaOptions
                     {
@@ -212,71 +202,60 @@ namespace Sales.ViewModels
             }
         }
 
-        private async void TakePhoto()
+        public ICommand DeleteCommand
         {
-            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
-
-            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
-            {
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera, Permission.Storage });
-                cameraStatus = results[Permission.Camera];
-                storageStatus = results[Permission.Storage];
-            }
-            if (cameraStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
-            {
-                var option = await Application.Current.MainPage.DisplayActionSheet("Photo Action with", null, null, "Take Photo", "Choose from Gallary");
-                if (option == "Take Photo")
-                {
-                    this.file = await CrossMedia.Current.TakePhotoAsync(
-                        new StoreCameraMediaOptions
-                        {
-                            Directory = "Sample",
-                            Name = "test.jpg",
-                            PhotoSize = PhotoSize.Small,
-                        });
-                    //var file = await CrossMedia.Current.TakePhotoAsync(
-                    //    new StoreCameraMediaOptions
-                    //    {
-                    //        SaveToAlbum = true,
-                    //        Directory = "Sample",
-                    //        DefaultCamera = CameraDevice.Front,
-                    //        PhotoSize = PhotoSize.Medium,
-                    //        CompressionQuality = 92
-                    //    });
-
-                    //riderPhotoName = "RiderPhoto.jpg";
-                    //riderphotoPreview.IsVisible = true;
-                    //riderphotoPreview.Source = ImageSource.FromStream(() =>
-                    //{
-                    //    riderPhotoStream = file.GetStream();
-                    //    return riderPhotoStream;
-                    //});
-                    //riderPhotoStream = file.GetStream();
-                    //file.Dispose();
-                }
-                //else
-                //{
-                //    var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions { });
-                //    riderPhotoName = "RiderPhoto.jpg";
-                //    riderphotoPreview.IsVisible = true;
-                //    riderphotoPreview.Source = ImageSource.FromStream(() =>
-                //    {
-                //        riderPhotoStream = file.GetStream();
-                //        return riderPhotoStream;
-                //    });
-                //    riderPhotoStream = file.GetStream();
-                //    file.Dispose();
-                //}
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert("Permissions Denied", "Unable to take photos.", "OK");
-                CrossPermissions.Current.OpenAppSettings();
-            }
-
+            get { return new RelayCommand(Delete); }
         }
 
+        private async void Delete()
+        {
+            var answer = await Application.Current.MainPage.DisplayAlert(
+                Languages.msgConfirm,
+                Languages.msgDeleteConfirmation,
+                Languages.btnYes,
+                Languages.btnNo);
+            if (!answer)
+            {
+                return;
+            }
+
+            this.IsRunning = true;
+            this.IsEnabled = false;
+
+            var checkConnection = await this.apiService.CheckConnection();
+            if (!checkConnection.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, checkConnection.Message, Languages.Accept);
+                return;
+            }
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlProductsController"].ToString();
+            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId);
+            if (!response.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
+                return;
+            }
+
+            var productsViewModel = ProductsViewModel.GetIntance();
+            var deletedProduct = productsViewModel.MyProducts.Where(p => p.ProductId == this.Product.ProductId).FirstOrDefault();
+            if (deletedProduct != null)
+            {
+                productsViewModel.MyProducts.Remove(deletedProduct);
+            }
+
+            productsViewModel.RefreshList();
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
         #endregion
+
     }
 }

@@ -70,11 +70,47 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string btnDelete {
+            get {
+                return ResourceManager.GetString("btnDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string btnEdit {
+            get {
+                return ResourceManager.GetString("btnEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string btnNo {
+            get {
+                return ResourceManager.GetString("btnNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string btnSave {
             get {
                 return ResourceManager.GetString("btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string btnYes {
+            get {
+                return ResourceManager.GetString("btnYes", resourceCulture);
             }
         }
         
@@ -133,6 +169,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is Available?.
+        /// </summary>
+        public static string labelIsAvailable {
+            get {
+                return ResourceManager.GetString("labelIsAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string labelPrice {
@@ -147,6 +192,24 @@ namespace Sales.Resources {
         public static string labelRemarks {
             get {
                 return ResourceManager.GetString("labelRemarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string msgConfirm {
+            get {
+                return ResourceManager.GetString("msgConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to Delete this?.
+        /// </summary>
+        public static string msgDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("msgDeleteConfirmation", resourceCulture);
             }
         }
         
@@ -210,6 +273,15 @@ namespace Sales.Resources {
         public static string titleAddProduct {
             get {
                 return ResourceManager.GetString("titleAddProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Product.
+        /// </summary>
+        public static string titleEditProduct {
+            get {
+                return ResourceManager.GetString("titleEditProduct", resourceCulture);
             }
         }
         

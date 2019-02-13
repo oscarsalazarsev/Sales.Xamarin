@@ -174,4 +174,28 @@
   <data name="Cancel" xml:space="preserve">
     <value>Anulo</value>
   </data>
+  <data name="btnEdit" xml:space="preserve">
+    <value>Redakto</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Fshi</value>
+  </data>
+  <data name="msgDeleteConfirmation" xml:space="preserve">
+    <value>A jeni i sigurt se doni të fshini këtë?</value>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Po</value>
+  </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>Jo</value>
+  </data>
+  <data name="msgConfirm" xml:space="preserve">
+    <value>Konfirmo</value>
+  </data>
+  <data name="titleEditProduct" xml:space="preserve">
+    <value>Ndrysho Produktin</value>
+  </data>
+  <data name="labelIsAvailable" xml:space="preserve">
+    <value>është e vlefshme</value>
+  </data>
 </root>

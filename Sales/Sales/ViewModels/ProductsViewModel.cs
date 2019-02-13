@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Sales.Common.Models;
@@ -17,12 +19,11 @@ namespace Sales.ViewModels
         
         private bool isRefreshing;
 
+        private ObservableCollection<ProductsItemViewModel> products;
         #endregion
 
         #region Properties
-        private ObservableCollection<Product> products;
-
-        public ObservableCollection<Product> Products
+        public ObservableCollection<ProductsItemViewModel> Products
         {
             get { return this.products; }
             set { this.SetValue(ref this.products, value); }
@@ -33,6 +34,8 @@ namespace Sales.ViewModels
             get { return this.isRefreshing; }
             set { this.SetValue(ref this.isRefreshing, value); }
         }
+
+        public List<Product> MyProducts { get; set; }
         #endregion
 
         #region Constructors
@@ -82,9 +85,26 @@ namespace Sales.ViewModels
                 return;
             }
 
-            var list = (List<Product>)response.Result;
-            this.Products = new ObservableCollection<Product>(list);
+            this.MyProducts = (List<Product>)response.Result;
+            this.RefreshList();
             this.IsRefreshing = false;
+        }
+
+        public void RefreshList()
+        {
+            var listProductsItemsViewModel = this.MyProducts.Select(p => new ProductsItemViewModel
+            {
+                Description = p.Description,
+                ImageArray = p.ImageArray,
+                ImagePath = p.ImagePath,
+                IsAvailable = p.IsAvailable,
+                Price = p.Price,
+                ProductId = p.ProductId,
+                PublshOn = p.PublshOn,
+                Remarks = p.Remarks,
+            });
+
+            this.Products = new ObservableCollection<ProductsItemViewModel>(listProductsItemsViewModel.OrderBy(p => p.Description));
         }
         #endregion
 
@@ -94,12 +114,7 @@ namespace Sales.ViewModels
             get { return new RelayCommand(LoadProducts); }
         }
         #endregion
-
-
-
-
-
-
+        
     }
 }
 

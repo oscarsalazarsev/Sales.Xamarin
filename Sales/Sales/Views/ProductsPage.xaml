@@ -24,11 +24,19 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="{i18n:Translate btnEdit}" Command="{Binding EditProductCommand}"/>
+                                <MenuItem Text="{i18n:Translate btnDelete}" Command="{Binding DeleteProductCommand}" IsDestructive="True"/>
+                            </ViewCell.ContextActions>
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding EditProductCommand}"/>
+                                </Grid.GestureRecognizers>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <Image
                                     Grid.Column="0"
@@ -52,6 +60,11 @@
                                     Text="{Binding Price, StringFormat='{0:C2}'}"
                                     VerticalOptions="Center">
                                 </Label>
+                                <Image
+                                    Grid.Column="3"
+                                    VerticalOptions="Center"
+                                    Source="ic_chevron_right">
+                                </Image>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
