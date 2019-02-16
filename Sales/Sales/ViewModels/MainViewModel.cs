@@ -8,16 +8,22 @@ namespace Sales.ViewModels
     public class MainViewModel
     {
         #region Properties
+
         public ProductsViewModel Products { get; set; }
+
         public AddProductViewModel AddProduct { get; set; }
+
         public EditProductViewModel EditProduct { get; set; }
+
+        public LoginViewModel Login { get; set; }
+
         #endregion
 
         #region Constructors
         public MainViewModel()
         {
             intance = this;
-            this.Products = new ProductsViewModel();
+            //this.Products = new ProductsViewModel();
         }
         #endregion
 

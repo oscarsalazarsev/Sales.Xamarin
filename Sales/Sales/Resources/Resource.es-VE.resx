@@ -198,4 +198,52 @@
   <data name="labelIsAvailable" xml:space="preserve">
     <value>Está disponible?</value>
   </data>
+  <data name="labelSearch" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
+  <data name="titleLogin" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="labelEMail" xml:space="preserve">
+    <value>Correo</value>
+  </data>
+  <data name="placeholderEmail" xml:space="preserve">
+    <value>Escribe tu correo electrónico...</value>
+  </data>
+  <data name="labelPassword" xml:space="preserve">
+    <value>Clave</value>
+  </data>
+  <data name="placeholderPassword" xml:space="preserve">
+    <value>Fusni fjalëkalimin tuaj</value>
+  </data>
+  <data name="labelRememberme" xml:space="preserve">
+    <value>Recuérdame!</value>
+  </data>
+  <data name="msgForgot" xml:space="preserve">
+    <value>¡Ha olvidado la contraseña!</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>Nuevo usuario</value>
+  </data>
+  <data name="msgEmailValidation" xml:space="preserve">
+    <value>Debes introducir tu dirección de correo electrónico</value>
+  </data>
+  <data name="msgPasswordValidation" xml:space="preserve">
+    <value>Debes ingresar tu contraseña</value>
+  </data>
+  <data name="msgSomethingWrong" xml:space="preserve">
+    <value>El correo electrónico o la contraseña no son válidos.</value>
+  </data>
+  <data name="titleMenu" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>Cerca de</value>
+  </data>
+  <data name="titleSetup" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="msgExit" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
 </root>

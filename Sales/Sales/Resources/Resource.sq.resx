@@ -198,4 +198,52 @@
   <data name="labelIsAvailable" xml:space="preserve">
     <value>është e vlefshme</value>
   </data>
+  <data name="labelSearch" xml:space="preserve">
+    <value>Kërko</value>
+  </data>
+  <data name="titleLogin" xml:space="preserve">
+    <value>Lidhu</value>
+  </data>
+  <data name="labelEMail" xml:space="preserve">
+    <value>Emaili</value>
+  </data>
+  <data name="placeholderEmail" xml:space="preserve">
+    <value>Fut emailin tënd</value>
+  </data>
+  <data name="labelPassword" xml:space="preserve">
+    <value>Fjalëkalimi</value>
+  </data>
+  <data name="placeholderPassword" xml:space="preserve">
+    <value>Fut fjalëkalimin tënd</value>
+  </data>
+  <data name="labelRememberme" xml:space="preserve">
+    <value>Më kujto</value>
+  </data>
+  <data name="msgForgot" xml:space="preserve">
+    <value>A keni harruar fjalëkalimin tuaj ?!</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>Përdoruesi i ri</value>
+  </data>
+  <data name="msgEmailValidation" xml:space="preserve">
+    <value>Ju duhet të shkruani email-in tuaj.!</value>
+  </data>
+  <data name="msgPasswordValidation" xml:space="preserve">
+    <value>Ju duhet të shkruani fjalëkalimin tuaj.</value>
+  </data>
+  <data name="msgSomethingWrong" xml:space="preserve">
+    <value>Emaili ose fjalëkalimi nuk janë të vlefshëm.</value>
+  </data>
+  <data name="titleMenu" xml:space="preserve">
+    <value>Menuja</value>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>Rreth</value>
+  </data>
+  <data name="titleSetup" xml:space="preserve">
+    <value>Parametrizimi</value>
+  </data>
+  <data name="msgExit" xml:space="preserve">
+    <value>Mbyll sesionin</value>
+  </data>
 </root>

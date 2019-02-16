@@ -198,4 +198,52 @@
   <data name="labelIsAvailable" xml:space="preserve">
     <value>Is Available?</value>
   </data>
+  <data name="labelSearch" xml:space="preserve">
+	  <value>Search...</value>
+  </data>
+  <data name="titleLogin" xml:space="preserve">
+	  <value>Login</value>
+  </data>
+  <data name="labelEMail" xml:space="preserve">
+	  <value>EMail</value>
+  </data>
+  <data name="placeholderEmail" xml:space="preserve">
+	  <value>Enter your email...</value>
+  </data>
+  <data name="labelPassword" xml:space="preserve">
+	  <value>Password</value>
+  </data>
+  <data name="placeholderPassword" xml:space="preserve">
+	  <value>Enter your password...</value>
+  </data>
+  <data name="labelRememberme" xml:space="preserve">
+	  <value>Remember me</value>
+  </data>
+  <data name="msgForgot" xml:space="preserve">
+	  <value>Do you forgot your password?</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+	  <value>New user</value>
+  </data>
+  <data name="msgEmailValidation" xml:space="preserve">
+	  <value>You must enter your email.</value>
+  </data>
+  <data name="msgPasswordValidation" xml:space="preserve">
+	  <value>You must enter your password.</value>
+  </data>
+  <data name="msgSomethingWrong" xml:space="preserve">
+	  <value>The email or password are not valid.</value>
+  </data>
+  <data name="titleMenu" xml:space="preserve">
+	  <value>Menu</value>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+	  <value>About</value>
+  </data>
+  <data name="titleSetup" xml:space="preserve">
+	  <value>Setup</value>
+  </data>
+  <data name="msgExit" xml:space="preserve">
+	  <value>Close session</value>
+  </data>
 </root>

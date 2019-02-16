@@ -145,6 +145,77 @@ namespace Sales.Helpers
         {
             get { return Resource.labelIsAvailable; }
         }
+
+        public static string labelSearch
+        {
+            get { return Resource.labelSearch; }
+        }
+
+        public static string titleLogin
+        {
+            get { return Resource.titleLogin; }
+        }
+
+        public static string labelEMail
+        {
+            get { return Resource.labelEMail; }
+        }
+
+        public static string msgEmailValidation
+        {
+            get { return Resource.msgEmailValidation; }
+        }
+
+        public static string placeholderEmail
+        {
+            get { return Resource.placeholderEmail; }
+        }
+
+        public static string labelPassword
+        {
+            get { return Resource.labelPassword; }
+        }
+
+        public static string msgPasswordValidation
+        {
+            get { return Resource.msgPasswordValidation; }
+        }
+
+        public static string placeholderPassword
+        {
+            get { return Resource.placeholderPassword; }
+        }
+
+        public static string labelRememberme
+        {
+            get { return Resource.labelRememberme; }
+        }
+
+        public static string msgSomethingWrong
+        {
+            get { return Resource.msgSomethingWrong; }
+        }
+
+        public static string titleMenu
+        {
+            get { return Resource.titleMenu; }
+        }
+
+        public static string titleAbout
+        {
+            get { return Resource.titleAbout; }
+        }
+
+        public static string titleSetup
+        {
+            get { return Resource.titleSetup; }
+        }
+
+        public static string msgExit
+        {
+            get { return Resource.msgExit; }
+        }
+
     }
 
 }
