@@ -56,7 +56,7 @@
                         VerticalOptions="Center">
                     </Label>
                     <Switch
-                        IsToggled="{Binding IsRememberme}"
+                        IsToggled="{Binding IsRemembered}"
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>

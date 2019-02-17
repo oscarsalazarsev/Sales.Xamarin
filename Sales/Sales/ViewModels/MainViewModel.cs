@@ -1,5 +1,8 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using Sales.Helpers;
 using Sales.Views;
 using Xamarin.Forms;
 
@@ -17,14 +20,18 @@ namespace Sales.ViewModels
 
         public LoginViewModel Login { get; set; }
 
+        public ObservableCollection<MenuItemViewModel> Menu { get; set; }
+
         #endregion
 
         #region Constructors
         public MainViewModel()
         {
             intance = this;
+            this.LoadMenu();
             //this.Products = new ProductsViewModel();
         }
+
         #endregion
 
         #region Commands
@@ -36,7 +43,8 @@ namespace Sales.ViewModels
         private async void GoToAddProduct()
         {
             this.AddProduct = new AddProductViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new AddProductPage());
+            await App.Navigator.PushAsync(new AddProductPage());
+            //await Application.Current.MainPage.Navigation.PushAsync(new AddProductPage());
         }
         #endregion
 
@@ -53,6 +61,37 @@ namespace Sales.ViewModels
 
             return intance;
         }
+        #endregion
+
+        #region Methods
+
+        private void LoadMenu()
+        {
+            this.Menu = new ObservableCollection<MenuItemViewModel>();
+
+            this.Menu.Add(new MenuItemViewModel
+            {
+                Icon = "ic_info",
+                PageName = "AboutPage",
+                Title = Languages.titleAbout,
+            });
+
+            this.Menu.Add(new MenuItemViewModel
+            {
+                Icon = "ic_phonelink_setup",
+                PageName = "SetupPage",
+                Title = Languages.titleSetup,
+            });
+
+            this.Menu.Add(new MenuItemViewModel
+            {
+                Icon = "ic_exit_to_app",
+                PageName = "LoginPage",
+                Title = Languages.msgExit,
+            });
+
+        }
+
         #endregion
 
     }

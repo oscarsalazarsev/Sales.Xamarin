@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Sales.Helpers;
+using Sales.Services;
+using Sales.Views;
 using Xamarin.Forms;
 
 namespace Sales.ViewModels
@@ -11,6 +11,8 @@ namespace Sales.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         #region Attributes
+
+        private ApiServices apiService;
 
         private bool isRunning;
 
@@ -24,7 +26,7 @@ namespace Sales.ViewModels
 
         public string Password { get; set; }
 
-        public bool IsRememberme { get; set; }
+        public bool IsRemembered { get; set; }
 
         public bool IsRunning
         {
@@ -44,8 +46,9 @@ namespace Sales.ViewModels
 
         public LoginViewModel()
         {
+            this.apiService = new ApiServices();
             this.IsEnabled = true;
-            this.IsRememberme = true;
+            this.IsRemembered = true;
             this.IsRunning = false;
         }
         #endregion
@@ -85,6 +88,43 @@ namespace Sales.ViewModels
 
                 return;
             }
+
+            this.isRunning = true;
+            this.IsEnabled = false;
+
+            var checkConnection = await this.apiService.CheckConnection();
+            if (!checkConnection.IsSuccess)
+            {
+                this.isRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, checkConnection.Message, Languages.Accept);
+                return;
+            }
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var token = await this.apiService.GetToken(url, this.Email, this.Password);
+
+            if (token == null || String.IsNullOrEmpty(token.AccessToken))
+            {
+                this.isRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.msgSomethingWrong, Languages.Accept);
+                return;
+            }
+
+            Settings.TokenType = token.TokenType;
+            Settings.AccessToken = token.AccessToken;
+            Settings.Issued = token.Issued;
+            Settings.Expires = token.Expires;
+            Settings.IsRemembered = this.IsRemembered;
+
+            await Application.Current.MainPage.DisplayAlert("Ok", "Fuck yeahh!!", Languages.Accept);
+
+            MainViewModel.GetIntance().Products = new ProductsViewModel();
+            Application.Current.MainPage = new MasterPage();
+            //Application.Current.MainPage = new ProductsPage();
+            this.isRunning = false;
+            this.IsEnabled = true;
+
         }
         #endregion
     }
