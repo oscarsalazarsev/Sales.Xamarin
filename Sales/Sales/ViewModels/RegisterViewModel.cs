@@ -108,7 +108,7 @@ namespace Sales.ViewModels
                     new StoreCameraMediaOptions
                     {
                         Directory = "Sample",
-                        Name = "test.jpg",
+                        Name = String.Format("test_{0}.jpg", Guid.NewGuid().ToString()),
                         PhotoSize = PhotoSize.Small,
                     });
             }
