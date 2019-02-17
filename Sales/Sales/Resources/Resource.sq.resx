@@ -222,7 +222,7 @@
   <data name="msgForgot" xml:space="preserve">
     <value>A keni harruar fjalëkalimin tuaj ?!</value>
   </data>
-  <data name="btnRegister" xml:space="preserve">
+  <data name="titleRegister" xml:space="preserve">
     <value>Përdoruesi i ri</value>
   </data>
   <data name="msgEmailValidation" xml:space="preserve">
@@ -245,5 +245,62 @@
   </data>
   <data name="msgExit" xml:space="preserve">
     <value>Mbyll sesionin</value>
+  </data>
+  <data name="labelPasswordConfirm" xml:space="preserve">
+    <value>Konfirmo</value>
+  </data>
+  <data name="msgNoProductsMessage" xml:space="preserve">
+    <value>Nuk ka informacione për produktet.!</value>
+  </data>
+  <data name="labelFirstName" xml:space="preserve">
+    <value>Emri</value>
+  </data>
+  <data name="labelLastName" xml:space="preserve">
+    <value>Mbiemri</value>
+  </data>
+  <data name="labelPhone" xml:space="preserve">
+    <value>Telefoni</value>
+  </data>
+  <data name="labelAddress" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="placeholderFirstName" xml:space="preserve">
+    <value>Fut emrin tënd</value>
+  </data>
+  <data name="placeholderLastName" xml:space="preserve">
+    <value>Fut mbiemrin tënd</value>
+  </data>
+  <data name="placeholderPhone" xml:space="preserve">
+    <value>Fut numrin tënd të telefonit</value>
+  </data>
+  <data name="placeholderAddress" xml:space="preserve">
+    <value>Shkruani adresën tuaj ...!</value>
+  </data>
+  <data name="placeholderPasswordConfirm" xml:space="preserve">
+    <value>Shkruani fjalëkalimin tuaj të konfirmuar ...!</value>
+  </data>
+  <data name="msgFirstNameValidation" xml:space="preserve">
+    <value>Duhet të futni një emër grusht.</value>
+  </data>
+  <data name="msgLastNameValidation" xml:space="preserve">
+    <value>Ju duhet të shkruani një emër të fundit.</value>
+  </data>
+  <data name="msgEMailValidationValid" xml:space="preserve">
+    <value>Fusni një email të vlefshëm</value>
+  </data>
+  <data name="msgPhoneValidation" xml:space="preserve">
+    <value>Duhet të futni një numër telefoni.</value>
+  </data>
+  <data name="msgPasswordValidationLong" xml:space="preserve">
+    <value>Duhet të futni një fjalëkalim. Të paktën 6 karaktere!</value>
+  </data>
+  <data name="msgPasswordConfirmValidation" xml:space="preserve">
+    <value>Ju duhet të shkruani një fjalëkalim të konfirmuar.!</value>
+  </data>
+  <data name="msgPasswordsNoMatch" xml:space="preserve">
+    <value>Fjalëkalimi dhe konfirmimi duhet të jenë të barabartë.</value>
+  </data>
+  <data name="msgRegisterConfirmation" xml:space="preserve">
+    <value>Përdoruesi u krijua me sukses. Tani ju mund të shkruani me email dhe fjalëkalimin e caktuar.</value>
   </data>
 </root>

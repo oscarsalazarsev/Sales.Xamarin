@@ -94,7 +94,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled}"
-                        Text="{i18n:Translate btnRegister}"
+                        Text="{i18n:Translate titleRegister}"
                         TextColor="White">
                     </Button>
                 </StackLayout>

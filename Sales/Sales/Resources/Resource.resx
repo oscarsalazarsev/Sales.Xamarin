@@ -1,64 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+  <!--
+	Microsoft ResX Schema
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
+	Version 2.0
+
+	The primary goals of this format is to allow a simple XML format
+	that is mostly human readable. The generation and parsing of the
+	various data types are done through the TypeConverter classes
+	associated with the data types.
+
+	Example:
+
+	... ado.net/XML headers & schema ...
+	<resheader name="resmimetype">text/microsoft-resx</resheader>
+	<resheader name="version">2.0</resheader>
+	<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+	<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+	<data name="Name1">
+	<value>this is my long string</value>
+	<comment>this is a comment</comment>
+	</data>
+	<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+	<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+	<value>[base64 mime encoded serialized .NET Framework object]</value>
+	</data>
+	<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+	<value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+	<comment>This is a comment</comment>
+	</data>
+
+	There are any number of "resheader" rows that contain simple
+	name/value pairs.
+
+	Each data row contains a name, and value. The row also contains a
+	type or mimetype. Type corresponds to a .NET class that support
+	text/value conversion through the TypeConverter architecture.
+	Classes that don't support this are serialized and stored with the
+	mimetype set.
+
+	The mimetype is used for serialized objects, and tells the
+	ResXResourceReader how to depersist the object. This is currently not
+	extensible. For a given mimetype the value must be set accordingly:
+
+	Note - application/x-microsoft.net.object.binary.base64 is the format
+	that the ResXResourceWriter will generate, however the reader can
+	read any of the formats listed below.
+
+	mimetype: application/x-microsoft.net.object.binary.base64
+	value   : The object must be serialized with
+	: System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+	: and then encoded with base64 encoding.
+
+	mimetype: application/x-microsoft.net.object.soap.base64
+	value   : The object must be serialized with
+	: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+	: and then encoded with base64 encoding.
+
+	mimetype: application/x-microsoft.net.object.bytearray.base64
+	value   : The object must be serialized into a byte array
+	: using a System.ComponentModel.TypeConverter
+	: and then encoded with base64 encoding.
+	-->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -118,132 +121,189 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
+		<value>Error</value>
+	</data>
   <data name="Accept" xml:space="preserve">
-    <value>Accept</value>
-  </data>
+		<value>Accept</value>
+	</data>
   <data name="TurnOnInternet" xml:space="preserve">
-    <value>Please turn on your Internet Settings.</value>
-  </data>
+		<value>Please turn on your Internet Settings.</value>
+	</data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No Internet Connection.</value>
-  </data>
+		<value>No Internet Connection.</value>
+	</data>
   <data name="titleProducts" xml:space="preserve">
-    <value>Products</value>
-  </data>
+		<value>Products</value>
+	</data>
   <data name="titleAddProduct" xml:space="preserve">
-    <value>Add Product</value>
-  </data>
+		<value>Add Product</value>
+	</data>
   <data name="labelDescription" xml:space="preserve">
-    <value>Description</value>
-  </data>
+		<value>Description</value>
+	</data>
   <data name="placeholderDescription" xml:space="preserve">
-    <value>Enter the product description...</value>
-  </data>
+		<value>Enter the product description...</value>
+	</data>
   <data name="labelPrice" xml:space="preserve">
-    <value>Price</value>
-  </data>
+		<value>Price</value>
+	</data>
   <data name="placeholderPrice" xml:space="preserve">
-    <value>Enter the product price...</value>
-  </data>
+		<value>Enter the product price...</value>
+	</data>
   <data name="labelRemarks" xml:space="preserve">
-    <value>Remarks</value>
-  </data>
+		<value>Remarks</value>
+	</data>
   <data name="btnSave" xml:space="preserve">
-    <value>Save</value>
-  </data>
+		<value>Save</value>
+	</data>
   <data name="labelChangeImage" xml:space="preserve">
-    <value>Touch the image to change it</value>
-  </data>
+		<value>Touch the image to change it</value>
+	</data>
   <data name="errorDescription" xml:space="preserve">
-    <value>You must enter a description</value>
-  </data>
+		<value>You must enter a description</value>
+	</data>
   <data name="errorPrice" xml:space="preserve">
-    <value>You must enter a price greater than zero</value>
-  </data>
+		<value>You must enter a price greater than zero</value>
+	</data>
   <data name="msgImageSource" xml:space="preserve">
-    <value>Where are you going to take the picture?</value>
-  </data>
+		<value>Where are you going to take the picture?</value>
+	</data>
   <data name="msgFromGallery" xml:space="preserve">
-    <value>From gallery</value>
-  </data>
+		<value>From gallery</value>
+	</data>
   <data name="msgNewPicture" xml:space="preserve">
-    <value>Take a new picture</value>
-  </data>
+		<value>Take a new picture</value>
+	</data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
+		<value>Cancel</value>
+	</data>
   <data name="btnEdit" xml:space="preserve">
-    <value>Edit</value>
-  </data>
+		<value>Edit</value>
+	</data>
   <data name="btnDelete" xml:space="preserve">
-    <value>Delete</value>
-  </data>
+		<value>Delete</value>
+	</data>
   <data name="msgDeleteConfirmation" xml:space="preserve">
-    <value>Are you sure to Delete this?</value>
-  </data>
+		<value>Are you sure to Delete this?</value>
+	</data>
   <data name="btnYes" xml:space="preserve">
-    <value>Yes</value>
-  </data>
+		<value>Yes</value>
+	</data>
   <data name="btnNo" xml:space="preserve">
-    <value>No</value>
-  </data>
+		<value>No</value>
+	</data>
   <data name="msgConfirm" xml:space="preserve">
-    <value>Confirm</value>
-  </data>
+		<value>Confirm</value>
+	</data>
   <data name="titleEditProduct" xml:space="preserve">
-    <value>Edit Product</value>
-  </data>
+		<value>Edit Product</value>
+	</data>
   <data name="labelIsAvailable" xml:space="preserve">
-    <value>Is Available?</value>
-  </data>
+		<value>Is Available?</value>
+	</data>
   <data name="labelSearch" xml:space="preserve">
-	  <value>Search...</value>
-  </data>
+		<value>Search...</value>
+	</data>
   <data name="titleLogin" xml:space="preserve">
-	  <value>Login</value>
-  </data>
+		<value>Login</value>
+	</data>
   <data name="labelEMail" xml:space="preserve">
-	  <value>EMail</value>
-  </data>
+		<value>EMail</value>
+	</data>
   <data name="placeholderEmail" xml:space="preserve">
-	  <value>Enter your email...</value>
-  </data>
+		<value>Enter your email...</value>
+	</data>
   <data name="labelPassword" xml:space="preserve">
-	  <value>Password</value>
-  </data>
+		<value>Password</value>
+	</data>
   <data name="placeholderPassword" xml:space="preserve">
-	  <value>Enter your password...</value>
-  </data>
+		<value>Enter your password...</value>
+	</data>
   <data name="labelRememberme" xml:space="preserve">
-	  <value>Remember me</value>
-  </data>
+		<value>Remember me</value>
+	</data>
   <data name="msgForgot" xml:space="preserve">
-	  <value>Do you forgot your password?</value>
-  </data>
-  <data name="btnRegister" xml:space="preserve">
-	  <value>New user</value>
-  </data>
+		<value>Do you forgot your password?</value>
+	</data>
+  <data name="titleRegister" xml:space="preserve">
+		<value>New user</value>
+	</data>
   <data name="msgEmailValidation" xml:space="preserve">
-	  <value>You must enter your email.</value>
-  </data>
+		<value>You must enter your email.</value>
+	</data>
   <data name="msgPasswordValidation" xml:space="preserve">
-	  <value>You must enter your password.</value>
-  </data>
+		<value>You must enter your password.</value>
+	</data>
   <data name="msgSomethingWrong" xml:space="preserve">
-	  <value>The email or password are not valid.</value>
-  </data>
+		<value>The email or password are not valid.</value>
+	</data>
   <data name="titleMenu" xml:space="preserve">
-	  <value>Menu</value>
-  </data>
+		<value>Menu</value>
+	</data>
   <data name="titleAbout" xml:space="preserve">
-	  <value>About</value>
-  </data>
+		<value>About</value>
+	</data>
   <data name="titleSetup" xml:space="preserve">
-	  <value>Setup</value>
-  </data>
+		<value>Setup</value>
+	</data>
   <data name="msgExit" xml:space="preserve">
-	  <value>Close session</value>
-  </data>
+		<value>Close session</value>
+	</data>
+  <data name="msgNoProductsMessage" xml:space="preserve">
+		<value>No products information available.</value>
+	</data>
+  <data name="labelFirstName" xml:space="preserve">
+		<value>First name</value>
+	</data>
+  <data name="labelLastName" xml:space="preserve">
+		<value>Last name</value>
+	</data>
+  <data name="labelPhone" xml:space="preserve">
+		<value>Phone</value>
+	</data>
+  <data name="labelAddress" xml:space="preserve">
+		<value>Address</value>
+	</data>
+  <data name="placeholderFirstName" xml:space="preserve">
+		<value>Enter your first name...</value>
+	</data>
+  <data name="placeholderLastName" xml:space="preserve">
+		<value>Enter your last name...</value>
+	</data>
+  <data name="placeholderPhone" xml:space="preserve">
+		<value>Enter your phone number...</value>
+	</data>
+  <data name="placeholderAddress" xml:space="preserve">
+		<value>Enter your address...</value>
+	</data>
+  <data name="labelPasswordConfirm" xml:space="preserve">
+		<value>Confirm</value>
+	</data>
+  <data name="placeholderPasswordConfirm" xml:space="preserve">
+		<value>Enter your password confirm...</value>
+	</data>
+  <data name="msgFirstNameValidation" xml:space="preserve">
+		<value>You must enter a fist name.</value>
+	</data>
+  <data name="msgLastNameValidation" xml:space="preserve">
+		<value>You must enter a last name.</value>
+	</data>
+  <data name="msgEMailValidationValid" xml:space="preserve">
+		<value>You must enter a valid email.</value>
+	</data>
+  <data name="msgPhoneValidation" xml:space="preserve">
+		<value>You must enter a phone number.</value>
+	</data>
+  <data name="msgPasswordValidationLong" xml:space="preserve">
+		<value>You must enter a password. At least 6 characters.</value>
+	</data>
+  <data name="msgPasswordConfirmValidation" xml:space="preserve">
+		<value>You must enter a password confirm.</value>
+	</data>
+  <data name="msgPasswordsNoMatch" xml:space="preserve">
+		<value>The password and confirm must be equals.</value>
+	</data>
+  <data name="msgRegisterConfirmation" xml:space="preserve">
+		<value>The user was created successfully. Now you can enter with the email and the assigned password.</value>
+	</data>
 </root>

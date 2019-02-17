@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using Sales.Common.Models;
@@ -16,6 +17,8 @@ namespace Sales.ViewModels
         #region Attributes
 
         private ApiServices apiService;
+
+        private DataService dataService;
         
         private bool isRefreshing;
 
@@ -56,6 +59,7 @@ namespace Sales.ViewModels
         {
             intance = this;
             this.apiService = new ApiServices();
+            this.dataService = new DataService();
             this.LoadProducts();
         }
         #endregion
@@ -77,7 +81,7 @@ namespace Sales.ViewModels
 
         #region Methods
 
-        private async void LoadProducts()
+        private async void LoadProductsWithOutLocalDB()
         {
             this.IsRefreshing = true;
             var checkConnection = await this.apiService.CheckConnection();
@@ -87,6 +91,7 @@ namespace Sales.ViewModels
                 await Application.Current.MainPage.DisplayAlert(Languages.Error, checkConnection.Message, Languages.Accept);
                 return;
             }
+
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
@@ -101,6 +106,60 @@ namespace Sales.ViewModels
             this.MyProducts = (List<Product>)response.Result;
             this.RefreshList();
             this.IsRefreshing = false;
+        }
+
+        private async void LoadProducts()
+        {
+            this.IsRefreshing = true;
+            var checkConnection = await this.apiService.CheckConnection();
+            if (checkConnection.IsSuccess)
+            {
+                var answer = await this.LoadProductsFromAPI();
+                if (answer)
+                {
+                    this.SaveProductsToDB();
+                }
+            }
+            else
+            {
+                await this.LoadProductsFromDB();
+            }
+
+            if ((this.MyProducts == null) || (this.MyProducts.Count == 0))
+            {
+                this.IsRefreshing = false;
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.msgNoProductsMessage, Languages.Accept);
+                return;
+            }
+
+            this.RefreshList();
+            this.IsRefreshing = false;
+        }
+
+        private async Task LoadProductsFromDB()
+        {
+            this.MyProducts = await this.dataService.GetAllProducts();
+        }
+
+        private async Task SaveProductsToDB()
+        {
+            await this.dataService.DeleteAllProducts();
+            this.dataService.Insert(this.MyProducts);
+        }
+
+        private async Task<bool> LoadProductsFromAPI()
+        {
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlProductsController"].ToString();
+            var response = await this.apiService.GetList<Product>(url, prefix, controller, Settings.TokenType, Settings.AccessToken);
+            if (!response.IsSuccess)
+            {
+                return false;
+            }
+
+            this.MyProducts = (List<Product>)response.Result;
+            return true;
         }
 
         public void RefreshList()
@@ -142,6 +201,7 @@ namespace Sales.ViewModels
         #endregion
 
         #region Commands
+
         public ICommand SearchCommand
         {
             get { return new RelayCommand(RefreshList); }
@@ -151,6 +211,7 @@ namespace Sales.ViewModels
         {
             get { return new RelayCommand(LoadProducts); }
         }
+
         #endregion
         
     }

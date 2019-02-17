@@ -222,7 +222,7 @@
   <data name="msgForgot" xml:space="preserve">
     <value>¡Ha olvidado la contraseña!</value>
   </data>
-  <data name="btnRegister" xml:space="preserve">
+  <data name="titleRegister" xml:space="preserve">
     <value>Nuevo usuario</value>
   </data>
   <data name="msgEmailValidation" xml:space="preserve">
@@ -245,5 +245,62 @@
   </data>
   <data name="msgExit" xml:space="preserve">
     <value>Cerrar sesión</value>
+  </data>
+  <data name="msgNoProductsMessage" xml:space="preserve">
+    <value>No hay información de los productos disponible.</value>
+  </data>
+  <data name="labelFirstName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="labelLastName" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="labelPhone" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="labelAddress" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="placeholderFirstName" xml:space="preserve">
+    <value>Introduzca su nombre...</value>
+  </data>
+  <data name="placeholderLastName" xml:space="preserve">
+    <value>Ingrese su apellido...</value>
+  </data>
+  <data name="placeholderPhone" xml:space="preserve">
+    <value>Ingrese su número de teléfono...</value>
+  </data>
+  <data name="placeholderAddress" xml:space="preserve">
+    <value>Introduzca su dirección de...</value>
+  </data>
+  <data name="labelPasswordConfirm" xml:space="preserve">
+    <value>¡Confirmar!</value>
+  </data>
+  <data name="placeholderPasswordConfirm" xml:space="preserve">
+    <value>Introduzca su contraseña confirmar...</value>
+  </data>
+  <data name="msgFirstNameValidation" xml:space="preserve">
+    <value>Debe introducir un nombre de puño.</value>
+  </data>
+  <data name="msgLastNameValidation" xml:space="preserve">
+    <value>Debe introducir un nombre pasado.</value>
+  </data>
+  <data name="msgEMailValidationValid" xml:space="preserve">
+    <value>Debe ingresar un email válido.</value>
+  </data>
+  <data name="msgPhoneValidation" xml:space="preserve">
+    <value>Debe introducir un número de teléfono.</value>
+  </data>
+  <data name="msgPasswordValidationLong" xml:space="preserve">
+    <value>Debe introducir una contraseña. Por lo menos 6 caracteres.</value>
+  </data>
+  <data name="msgPasswordConfirmValidation" xml:space="preserve">
+    <value>Debe introducir una contraseña confirmar.</value>
+  </data>
+  <data name="msgPasswordsNoMatch" xml:space="preserve">
+    <value>La contraseña y confirmar deben ser iguales.</value>
+  </data>
+  <data name="msgRegisterConfirmation" xml:space="preserve">
+    <value>El usuario se ha creado correctamente. Ahora puede ingresar con el correo electrónico y la contraseña asignada.</value>
   </data>
 </root>

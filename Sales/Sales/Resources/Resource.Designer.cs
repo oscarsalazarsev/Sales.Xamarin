@@ -97,15 +97,6 @@ namespace Sales.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New user.
-        /// </summary>
-        public static string btnRegister {
-            get {
-                return ResourceManager.GetString("btnRegister", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string btnSave {
@@ -160,6 +151,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string labelAddress {
+            get {
+                return ResourceManager.GetString("labelAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Touch the image to change it.
         /// </summary>
         public static string labelChangeImage {
@@ -187,6 +187,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        public static string labelFirstName {
+            get {
+                return ResourceManager.GetString("labelFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Available?.
         /// </summary>
         public static string labelIsAvailable {
@@ -196,11 +205,38 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string labelLastName {
+            get {
+                return ResourceManager.GetString("labelLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string labelPassword {
             get {
                 return ResourceManager.GetString("labelPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string labelPasswordConfirm {
+            get {
+                return ResourceManager.GetString("labelPasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string labelPhone {
+            get {
+                return ResourceManager.GetString("labelPhone", resourceCulture);
             }
         }
         
@@ -268,11 +304,29 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter a valid email..
+        /// </summary>
+        public static string msgEMailValidationValid {
+            get {
+                return ResourceManager.GetString("msgEMailValidationValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close session.
         /// </summary>
         public static string msgExit {
             get {
                 return ResourceManager.GetString("msgExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a fist name..
+        /// </summary>
+        public static string msgFirstNameValidation {
+            get {
+                return ResourceManager.GetString("msgFirstNameValidation", resourceCulture);
             }
         }
         
@@ -304,6 +358,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter a last name..
+        /// </summary>
+        public static string msgLastNameValidation {
+            get {
+                return ResourceManager.GetString("msgLastNameValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Take a new picture.
         /// </summary>
         public static string msgNewPicture {
@@ -313,11 +376,65 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No products information available..
+        /// </summary>
+        public static string msgNoProductsMessage {
+            get {
+                return ResourceManager.GetString("msgNoProductsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a password confirm..
+        /// </summary>
+        public static string msgPasswordConfirmValidation {
+            get {
+                return ResourceManager.GetString("msgPasswordConfirmValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password and confirm must be equals..
+        /// </summary>
+        public static string msgPasswordsNoMatch {
+            get {
+                return ResourceManager.GetString("msgPasswordsNoMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must enter your password..
         /// </summary>
         public static string msgPasswordValidation {
             get {
                 return ResourceManager.GetString("msgPasswordValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a password. At least 6 characters..
+        /// </summary>
+        public static string msgPasswordValidationLong {
+            get {
+                return ResourceManager.GetString("msgPasswordValidationLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a phone number..
+        /// </summary>
+        public static string msgPhoneValidation {
+            get {
+                return ResourceManager.GetString("msgPhoneValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user was created successfully. Now you can enter with the email and the assigned password..
+        /// </summary>
+        public static string msgRegisterConfirmation {
+            get {
+                return ResourceManager.GetString("msgRegisterConfirmation", resourceCulture);
             }
         }
         
@@ -340,6 +457,15 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter your address....
+        /// </summary>
+        public static string placeholderAddress {
+            get {
+                return ResourceManager.GetString("placeholderAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter the product description....
         /// </summary>
         public static string placeholderDescription {
@@ -358,11 +484,47 @@ namespace Sales.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter your first name....
+        /// </summary>
+        public static string placeholderFirstName {
+            get {
+                return ResourceManager.GetString("placeholderFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your last name....
+        /// </summary>
+        public static string placeholderLastName {
+            get {
+                return ResourceManager.GetString("placeholderLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your password....
         /// </summary>
         public static string placeholderPassword {
             get {
                 return ResourceManager.GetString("placeholderPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your password confirm....
+        /// </summary>
+        public static string placeholderPasswordConfirm {
+            get {
+                return ResourceManager.GetString("placeholderPasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your phone number....
+        /// </summary>
+        public static string placeholderPhone {
+            get {
+                return ResourceManager.GetString("placeholderPhone", resourceCulture);
             }
         }
         
@@ -426,6 +588,15 @@ namespace Sales.Resources {
         public static string titleProducts {
             get {
                 return ResourceManager.GetString("titleProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New user.
+        /// </summary>
+        public static string titleRegister {
+            get {
+                return ResourceManager.GetString("titleRegister", resourceCulture);
             }
         }
         

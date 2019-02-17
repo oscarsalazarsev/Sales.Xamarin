@@ -22,6 +22,8 @@ namespace Sales.ViewModels
 
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
 
+        public RegisterViewModel Register { get; set; }
+
         #endregion
 
         #region Constructors

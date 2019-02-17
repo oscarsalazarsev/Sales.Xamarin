@@ -222,7 +222,7 @@
   <data name="msgForgot" xml:space="preserve">
     <value>Hai dimenticato la password?</value>
   </data>
-  <data name="btnRegister" xml:space="preserve">
+  <data name="titleRegister" xml:space="preserve">
     <value>Nuovo utente</value>
   </data>
   <data name="msgEmailValidation" xml:space="preserve">
@@ -245,5 +245,62 @@
   </data>
   <data name="msgExit" xml:space="preserve">
     <value>Chiudi sessione</value>
+  </data>
+  <data name="msgNoProductsMessage" xml:space="preserve">
+    <value>Non sono disponibili informazioni di prodotti.</value>
+  </data>
+  <data name="labelFirstName" xml:space="preserve">
+    <value>Primo nome</value>
+  </data>
+  <data name="labelLastName" xml:space="preserve">
+    <value>Cognome</value>
+  </data>
+  <data name="labelPhone" xml:space="preserve">
+    <value>Telefono</value>
+  </data>
+  <data name="labelAddress" xml:space="preserve">
+    <value>Indirizzo</value>
+  </data>
+  <data name="placeholderFirstName" xml:space="preserve">
+    <value>Inserisci il tuo nome...</value>
+  </data>
+  <data name="placeholderLastName" xml:space="preserve">
+    <value>Inserisci il tuo cognome...</value>
+  </data>
+  <data name="placeholderPhone" xml:space="preserve">
+    <value>Inserisci il tuo numero di telefono...</value>
+  </data>
+  <data name="placeholderAddress" xml:space="preserve">
+    <value>Inserisci il tuo indirizzo...</value>
+  </data>
+  <data name="labelPasswordConfirm" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="placeholderPasswordConfirm" xml:space="preserve">
+    <value>Inserisci la tua password confermare...</value>
+  </data>
+  <data name="msgFirstNameValidation" xml:space="preserve">
+    <value>È necessario immettere un nome di pugno.</value>
+  </data>
+  <data name="msgLastNameValidation" xml:space="preserve">
+    <value>È necessario immettere un cognome.</value>
+  </data>
+  <data name="msgEMailValidationValid" xml:space="preserve">
+    <value>È necessario immettere un indirizzo email valido.</value>
+  </data>
+  <data name="msgPhoneValidation" xml:space="preserve">
+    <value>È necessario immettere un numero di telefono.</value>
+  </data>
+  <data name="msgPasswordValidationLong" xml:space="preserve">
+    <value>È necessario immettere una password. Almeno 6 caratteri.</value>
+  </data>
+  <data name="msgPasswordConfirmValidation" xml:space="preserve">
+    <value>È necessario immettere una password confermare.</value>
+  </data>
+  <data name="msgPasswordsNoMatch" xml:space="preserve">
+    <value>La password e confermare deve essere uguale.</value>
+  </data>
+  <data name="msgRegisterConfirmation" xml:space="preserve">
+    <value>L'utente è stato creato correttamente. Ora è possibile immettere con l'email e la password assegnata.</value>
   </data>
 </root>

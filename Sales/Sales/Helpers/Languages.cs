@@ -216,6 +216,106 @@ namespace Sales.Helpers
             get { return Resource.msgExit; }
         }
 
+        public static string msgNoProductsMessage
+        {
+            get { return Resource.msgNoProductsMessage; }
+        }
+
+        public static string labelFirstName
+        {
+            get { return Resource.labelFirstName; }
+        }
+
+        public static string labelLastName
+        {
+            get { return Resource.labelLastName; }
+        }
+
+        public static string labelPhone
+        {
+            get { return Resource.labelPhone; }
+        }
+
+        public static string labelAddress
+        {
+            get { return Resource.labelAddress; }
+        }
+
+        public static string labelPasswordConfirm
+        {
+            get { return Resource.labelPasswordConfirm; }
+        }
+
+        public static string placeholderFirstName
+        {
+            get { return Resource.placeholderFirstName; }
+        }
+
+        public static string placeholderLastName
+        {
+            get { return Resource.placeholderLastName; }
+        }
+
+        public static string placeholderPhone
+        {
+            get { return Resource.placeholderPhone; }
+        }
+
+        public static string placeholderAddress
+        {
+            get { return Resource.placeholderAddress; }
+        }
+
+        public static string placeholderPasswordConfirm
+        {
+            get { return Resource.placeholderPasswordConfirm; }
+        }
+
+        public static string msgFirstNameValidation
+        {
+            get { return Resource.msgFirstNameValidation; }
+        }
+
+        public static string msgLastNameValidation
+        {
+            get { return Resource.msgLastNameValidation; }
+        }
+
+        public static string msgEMailValidationValid
+        {
+            get { return Resource.msgEMailValidationValid; }
+        }
+
+        public static string msgPhoneValidation
+        {
+            get { return Resource.msgPhoneValidation; }
+        }
+
+        public static string msgPasswordValidationLong
+        {
+            get { return Resource.msgPasswordValidationLong; }
+        }
+
+        public static string msgPasswordConfirmValidation
+        {
+            get { return Resource.msgPasswordConfirmValidation; }
+        }
+
+        public static string msgPasswordsNoMatch
+        {
+            get { return Resource.msgPasswordsNoMatch; }
+        }
+
+        public static string msgRegisterConfirmation
+        {
+            get { return Resource.msgRegisterConfirmation; }
+        }
+
+        public static string titleRegister
+        {
+            get { return Resource.titleRegister; }
+        }
+
     }
 
 }

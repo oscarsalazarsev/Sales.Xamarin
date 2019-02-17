@@ -126,6 +126,20 @@ namespace Sales.ViewModels
             this.IsEnabled = true;
 
         }
+
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+        }
+
+        private async void Register()
+        {
+            MainViewModel.GetIntance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
         #endregion
     }
 }
