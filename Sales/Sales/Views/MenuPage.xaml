@@ -27,7 +27,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image
-                                    Grid.Column="1"
+                                    Grid.Column="0"
                                     Source="{Binding Icon}"
                                     WidthRequest="50"
                                     HeightRequest="50">

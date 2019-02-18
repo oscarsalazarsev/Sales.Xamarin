@@ -3,7 +3,7 @@ using System.Net.Mail;
 
 namespace Sales.Helpers
 {
-    public static class RegexHelper
+    public static class RegexManager
     {
         public static bool IsValidEmailAddress(string emailaddress)
         {

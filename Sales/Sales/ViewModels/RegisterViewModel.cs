@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Sales.Common.Models;
 using Sales.Helpers;
 using Sales.Services;
 using System;
@@ -161,7 +162,7 @@ namespace Sales.ViewModels
                 return;
             }
 
-            if (!RegexHelper.IsValidEmailAddress(this.EMail))
+            if (!RegexManager.IsValidEmailAddress(this.EMail))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
@@ -206,7 +207,6 @@ namespace Sales.ViewModels
                 return;
             }
 
-
             if (!this.Password.Equals(this.PasswordConfirm))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -216,8 +216,64 @@ namespace Sales.ViewModels
                 return;
             }
 
-        }
+            this.IsRunning = true;
+            this.IsEnabled = false;
 
+            var checkConnection = await this.apiService.CheckConnection();
+            if (!checkConnection.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    checkConnection.Message,
+                    Languages.Accept);
+                return;
+            }
+
+            byte[] imageArray = null;
+            if (this.file != null)
+            {
+                imageArray = FilesManager.ReadFully(this.file.GetStream());
+            }
+
+            var userRequest = new UserRequest
+            {
+                Address = this.Address,
+                EMail = this.EMail,
+                FirstName = this.FirstName,
+                LastName = this.LastName,
+                Phone = this.Phone,
+                Password = this.Password,
+                ImageArray = imageArray,
+            };
+
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlUsersController"].ToString();
+            var response = await this.apiService.Post(url, prefix, controller, userRequest);
+            if (!response.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    response.Message,
+                    Languages.Accept);
+                return;
+            }
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
+
+            await Application.Current.MainPage.DisplayAlert(
+                Languages.msgConfirm,
+                Languages.msgRegisterConfirmation,
+                Languages.Accept);
+
+            await Application.Current.MainPage.Navigation.PopAsync();
+
+        }
 
         #endregion
     }

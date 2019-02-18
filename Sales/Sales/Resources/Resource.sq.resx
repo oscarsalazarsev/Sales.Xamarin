@@ -232,13 +232,13 @@
     <value>Ju duhet të shkruani fjalëkalimin tuaj.</value>
   </data>
   <data name="msgSomethingWrong" xml:space="preserve">
-    <value>Emaili ose fjalëkalimi nuk janë të vlefshëm.</value>
+    <value>Emaili ose fjalëkalimi nuk janë të vlefshme.</value>
   </data>
   <data name="titleMenu" xml:space="preserve">
     <value>Menuja</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>Rreth</value>
+    <value>për</value>
   </data>
   <data name="titleSetup" xml:space="preserve">
     <value>Parametrizimi</value>

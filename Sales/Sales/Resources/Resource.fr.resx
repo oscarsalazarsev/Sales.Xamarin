@@ -154,7 +154,7 @@
     <value>Enregistrer</value>
   </data>
   <data name="labelChangeImage" xml:space="preserve">
-    <value>Touchez l&amp;#39;image pour la changer</value>
+    <value>Touchez l'image pour la changer</value>
   </data>
   <data name="errorDescription" xml:space="preserve">
     <value>Vous devez saisir un libellé !</value>
@@ -232,13 +232,13 @@
     <value>Vous devez saisir votre mot de passe !</value>
   </data>
   <data name="msgSomethingWrong" xml:space="preserve">
-    <value>L&amp;#39;email ou le mot de passe ne sont pas valides.!</value>
+    <value>L'email ou le mot de passe ne sont pas valides.</value>
   </data>
   <data name="titleMenu" xml:space="preserve">
     <value>Menu</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>about();</value>
+    <value>Sur</value>
   </data>
   <data name="titleSetup" xml:space="preserve">
     <value>Installation</value>

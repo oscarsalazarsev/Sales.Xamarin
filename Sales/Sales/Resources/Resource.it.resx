@@ -154,7 +154,7 @@
     <value>Salvare</value>
   </data>
   <data name="labelChangeImage" xml:space="preserve">
-    <value>Tocca l&amp;#39;immagine per cambiarla</value>
+    <value>Tocca l'immagine per cambiarla</value>
   </data>
   <data name="errorDescription" xml:space="preserve">
     <value>Inserisci una descrizione</value>
@@ -232,13 +232,13 @@
     <value>Devi inserire la tua password</value>
   </data>
   <data name="msgSomethingWrong" xml:space="preserve">
-    <value>L&amp;#39;e-mail o la password non sono validi.!</value>
+    <value>L'email o la password non sono validi.</value>
   </data>
   <data name="titleMenu" xml:space="preserve">
     <value>Menu</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>about();</value>
+    <value>Di</value>
   </data>
   <data name="titleSetup" xml:space="preserve">
     <value>Installazione</value>

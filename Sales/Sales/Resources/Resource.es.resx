@@ -238,7 +238,7 @@
     <value>Menú</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>about();</value>
+    <value>Acerca de</value>
   </data>
   <data name="titleSetup" xml:space="preserve">
     <value>Configurar</value>
@@ -280,10 +280,10 @@
     <value>Introduzca su contraseña confirmar...</value>
   </data>
   <data name="msgFirstNameValidation" xml:space="preserve">
-    <value>Debe introducir un nombre de puño.</value>
+    <value>Debe introducir un nombre.</value>
   </data>
   <data name="msgLastNameValidation" xml:space="preserve">
-    <value>Debe introducir un nombre pasado.</value>
+    <value>Debe introducir un apellido.</value>
   </data>
   <data name="msgEMailValidationValid" xml:space="preserve">
     <value>Debe ingresar un email válido.</value>

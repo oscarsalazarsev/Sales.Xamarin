@@ -238,7 +238,7 @@
     <value>Menu</value>
   </data>
   <data name="titleAbout" xml:space="preserve">
-    <value>sobre();</value>
+    <value>Sobre</value>
   </data>
   <data name="titleSetup" xml:space="preserve">
     <value>Configurar</value>

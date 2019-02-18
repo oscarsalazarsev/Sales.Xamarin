@@ -189,7 +189,6 @@ namespace Sales.ViewModels
 
             if (source == Languages.msgNewPicture)
             {
-                //TakePhoto();
                 this.file = await CrossMedia.Current.TakePhotoAsync(
                     new StoreCameraMediaOptions
                     {
