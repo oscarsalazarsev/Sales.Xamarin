@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
+using Sales.Common.Models;
 using Sales.Helpers;
 using Sales.Services;
 using Sales.Views;
@@ -117,9 +119,19 @@ namespace Sales.ViewModels
             Settings.Expires = token.Expires;
             Settings.IsRemembered = this.IsRemembered;
 
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlUsersController"].ToString();
+            var response = await this.apiService.GetUser(url, prefix, $"{controller}/GetUser", this.Email, token.TokenType, token.AccessToken);
+            if (response.IsSuccess)
+            {
+                var userASP = (MyUserASP)response.Result;
+                MainViewModel.GetInstance().UserASP = userASP;
+                Settings.UserASP = JsonConvert.SerializeObject(userASP);
+            }
+
             await Application.Current.MainPage.DisplayAlert("Ok", "Fuck yeahh!!", Languages.Accept);
 
-            MainViewModel.GetIntance().Products = new ProductsViewModel();
+            MainViewModel.GetInstance().Products = new ProductsViewModel();
             Application.Current.MainPage = new MasterPage();
             //Application.Current.MainPage = new ProductsPage();
             this.isRunning = false;
@@ -137,7 +149,7 @@ namespace Sales.ViewModels
 
         private async void Register()
         {
-            MainViewModel.GetIntance().Register = new RegisterViewModel();
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion

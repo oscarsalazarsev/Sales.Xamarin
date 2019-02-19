@@ -4,11 +4,8 @@ using Sales.API.Models;
 using Sales.Common.Models;
 using Sales.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Configuration;
 
 namespace Sales.API.Helpers
@@ -58,23 +55,24 @@ namespace Sales.API.Helpers
                     Email = userRequest.EMail,
                     UserName = userRequest.EMail,
                     PhoneNumber = userRequest.Phone,
+                    
                 };
 
                 var result = userManager.Create(userASP, userRequest.Password);
                 if (result.Succeeded)
                 {
                     var newUserASP = userManager.FindByEmail(userRequest.EMail);
-                    userManager.AddClaim(newUserASP.Id, new Claim(ClaimTypes.GivenName, userRequest.FirstName));
-                    userManager.AddClaim(newUserASP.Id, new Claim(ClaimTypes.Name, userRequest.LastName));
+                    userManager.AddClaim(newUserASP.Id, new System.Security.Claims.Claim(ClaimTypes.GivenName, userRequest.FirstName));
+                    userManager.AddClaim(newUserASP.Id, new System.Security.Claims.Claim(ClaimTypes.Name, userRequest.LastName));
 
                     if (!string.IsNullOrEmpty(userRequest.Address))
                     {
-                        userManager.AddClaim(newUserASP.Id, new Claim(ClaimTypes.StreetAddress, userRequest.Address));
+                        userManager.AddClaim(newUserASP.Id, new System.Security.Claims.Claim(ClaimTypes.StreetAddress, userRequest.Address));
                     }
 
                     if (!string.IsNullOrEmpty(userRequest.ImagePath))
                     {
-                        userManager.AddClaim(newUserASP.Id, new Claim(ClaimTypes.Uri, userRequest.ImagePath));
+                        userManager.AddClaim(newUserASP.Id, new System.Security.Claims.Claim(ClaimTypes.Uri, userRequest.ImagePath));
                     }
 
                     return new Response

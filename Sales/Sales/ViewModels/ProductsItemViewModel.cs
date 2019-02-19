@@ -81,7 +81,7 @@ namespace Sales.ViewModels
 
         private async void EditProducts()
         {
-            MainViewModel.GetIntance().EditProduct = new EditProductViewModel(this);
+            MainViewModel.GetInstance().EditProduct = new EditProductViewModel(this);
             await App.Navigator.PushAsync(new EditProductPage());
             //await Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
         }

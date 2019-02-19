@@ -29,9 +29,9 @@ namespace Sales.Helpers
         private static readonly string stringDefault = string.Empty;
         private static readonly bool booleanDefault = false;
         private static readonly DateTime datetimeDefault = DateTime.MinValue;
+        private const string userASP = "UserASP";
 
         #endregion
-
 
         #region Properties
 
@@ -92,6 +92,18 @@ namespace Sales.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(expires, value);
+            }
+        }
+
+        public static string UserASP
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(userASP, stringDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(userASP, value);
             }
         }
 

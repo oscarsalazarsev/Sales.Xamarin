@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using Sales.Helpers;
 using Xamarin.Forms;
+using Sales.Common.Models;
 
 namespace Sales.ViewModels
 {
@@ -52,7 +53,7 @@ namespace Sales.ViewModels
                 Settings.IsRemembered = false;
                 Settings.Issued = DateTime.MinValue;
                 Settings.Expires = DateTime.MinValue;
-                MainViewModel.GetIntance().Login = new LoginViewModel();
+                MainViewModel.GetInstance().Login = new LoginViewModel();
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
             }
         }
