@@ -108,7 +108,7 @@
                         Source="Google_Plus"
                         WidthRequest="50">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding LoginGmailCommand}"/>
+                            <TapGestureRecognizer Command="{Binding LoginGoogleCommand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image

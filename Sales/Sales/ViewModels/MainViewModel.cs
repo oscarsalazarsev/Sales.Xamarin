@@ -44,9 +44,17 @@ namespace Sales.ViewModels
         {
             get
             {
-                if (this.UserASP != null && this.UserASP.Claims != null && this.UserASP.Claims.Count > 2)
+                foreach (var claim in this.UserASP.Claims)
                 {
-                    return $"https://salesapisevices.azurewebsites.net{this.UserASP.Claims[3].ClaimValue.Substring(1)}";
+                    if (claim.ClaimType == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/uri")
+                    {
+                        if (claim.ClaimValue.StartsWith("~"))
+                        {
+                            return $"https://salesapisevices.azurewebsites.net{this.UserASP.Claims[3].ClaimValue.Substring(1)}";
+                        }
+
+                        return claim.ClaimValue;
+                    } 
                 }
 
                 return null;

@@ -68,5 +68,29 @@ namespace Sales.API.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("LoginFacebook")]
+        public IHttpActionResult LoginFacebook(FacebookResponse profile)
+        {
+            var user = UsersManager.GetUserASP(profile.Id);
+            if (user != null)
+            {
+                return Ok(true);
+            }
+
+            var userRequest = new UserRequest
+            {
+                EMail = profile.Id,
+                FirstName = profile.FirstName,
+                ImagePath = profile.Picture.Data.Url,
+                LastName = profile.LastName,
+                Password = profile.Id,
+            };
+
+            var answer = UsersManager.CreateUserASP(userRequest);
+            return Ok(answer);
+        }
+
+
     }
 }
