@@ -104,36 +104,36 @@
                     VerticalOptions="EndAndExpand">
                     <Image
                         Aspect="AspectFit"
-                        HeightRequest="70"
+                        HeightRequest="50"
                         Source="Google_Plus"
-                        WidthRequest="70">
+                        WidthRequest="50">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LoginGmailCommand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Aspect="AspectFit"
-                        HeightRequest="70"
+                        HeightRequest="50"
                         Source="Facebook"
-                        WidthRequest="70">
+                        WidthRequest="50">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LoginFacebookCommand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Aspect="AspectFit"
-                        HeightRequest="70"
+                        HeightRequest="50"
                         Source="Twitter"
-                        WidthRequest="70">
+                        WidthRequest="50">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LoginTwiterCommand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Aspect="AspectFit"
-                        HeightRequest="70"
+                        HeightRequest="50"
                         Source="Instagram"
-                        WidthRequest="70">
+                        WidthRequest="50">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LoginInstagramCommand}"/>
                         </Image.GestureRecognizers>
